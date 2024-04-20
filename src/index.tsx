@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './scss/main.scss';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {QrCheckerPage} from "./components/pages/QrCheckerPage";
+import {MainPage} from "./components/pages/MainPage";
 
 
 const root = ReactDOM.createRoot(
@@ -16,11 +17,16 @@ const root = ReactDOM.createRoot(
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <div>Hello world!2</div>,
+        element: <MainPage/>,
     },
+
     {
         path: "/qr",
         element: <QrCheckerPage/>
+    },
+    {
+        path: "/main",
+        element: <MainPage/>
     },
 ]);
 
