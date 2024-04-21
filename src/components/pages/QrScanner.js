@@ -34,7 +34,9 @@ const Html5QrcodePlugin = (props) => {
         }
         const html5QrcodeScanner = new Html5QrcodeScanner(qrcodeRegionId, config, verbose);
         html5QrcodeScanner.render(props.qrCodeSuccessCallback, props.qrCodeErrorCallback);
-
+        setTimeout(() => {
+            document.getElementById("html5-qrcode-button-camera-permission").click()
+        },50)
         // cleanup function when component will unmount
         return () => {
             html5QrcodeScanner.clear().catch(error => {

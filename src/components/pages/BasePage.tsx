@@ -2,23 +2,23 @@ import {Link} from "react-router-dom";
 import {useEffect} from "react";
 
 export const BasePage = ({children}) => {
-    const userMedia = async function getMedia(constraints) {
-        let stream = null;
-
-        try {
-            stream = await navigator.mediaDevices.getUserMedia(constraints);
-            /* use the stream */
-        } catch (err) {
-            /* handle the error */
-        }
-    }
-
-    useEffect(() => {
-        // userMedia({
-        //     audio: true,
-        //     video: true,
-        // })
-    })
+    // const userMedia = async function getMedia(constraints) {
+    //     let stream = null;
+    //
+    //     try {
+    //         stream = await navigator.mediaDevices.getUserMedia(constraints);
+    //         /* use the stream */
+    //     } catch (err) {
+    //         /* handle the error */
+    //     }
+    // }
+    //
+    // useEffect(() => {
+    //     // userMedia({
+    //     //     audio: true,
+    //     //     video: true,
+    //     // })
+    // })
     return (
         <div className='container-fluid' >
             {/*<div className="row">*/}

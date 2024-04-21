@@ -8,6 +8,7 @@ import './scss/main.scss';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {QrCheckerPage} from "./components/pages/QrCheckerPage";
 import {MainPage} from "./components/pages/MainPage";
+import {AddPartnerPage} from "./components/pages/AddPartnerPage";
 
 
 const root = ReactDOM.createRoot(
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
     {
         path: "/main",
         element: <MainPage/>
+    },
+    {
+        path: "/addPartner",
+        element: <AddPartnerPage/>
     },
 ]);
 
