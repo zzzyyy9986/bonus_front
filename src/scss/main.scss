@@ -4,6 +4,8 @@
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 @import "bonus.scss";
+@import "loader.scss";
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
 body{
   //font: ;
@@ -88,4 +90,27 @@ body{
 .go-qr-banner-button span{
   color:white;
   font-size: 18px;
+}
+.qr-container {
+  min-height: calc(100vh - 60px);
+  background: black;
+}
+.qr-menu{
+  background: black;
+}
+.bonus-btn{
+  background: #484AA0;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+}
+.qr-menu-item-img{
+  display: flex;
+  justify-content: center;
+}
+.qr-menu-item-text{
+  display: flex;
+  justify-content: center;
+  color: white;
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BasePage } from "./BasePage";
 import axios from "axios";
 import {serverUrl} from "../../env";
+import {ResponseStatuses} from "../../common/enums/ResponseStatuses";
 
 interface partner {
   name: string;
@@ -19,11 +20,18 @@ const setFormValue = (e, setF) => {
 };
 export const AddPartnerPage = () => {
   const [partner, setPartner]: [partner, Function] = useState({} as partner);
-  const sendForm = (e) => {
+  const [serverMessage,setServerMessage] = useState("")
+  const sendForm = async (e) => {
       e.preventDefault()
-      axios.post(serverUrl + '/addPartner',{
+      const serverResp = await axios.post(serverUrl + '/addPartner',{
           partner
       })
+    if(serverResp.data.status === ResponseStatuses.ok){
+      setServerMessage("Успешно добавили партнера");
+      setInterval(() => {
+        setServerMessage("");
+      },2000)
+    }
   }
   return (
     <BasePage>
@@ -70,6 +78,11 @@ export const AddPartnerPage = () => {
             <button type='submit' className="btn btn-warning">Сохранить</button>
           </div>
         </form>
+        {serverMessage!= '' &&
+            <div className='alert alert-success mt-2'>
+              Успешно добавили партнера
+            </div>
+        }
       </div>
     </BasePage>
   );
